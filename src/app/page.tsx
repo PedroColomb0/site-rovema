@@ -92,12 +92,13 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section com Estilo Profissional */}
+      {/* Hero Section */}
       <section
         className="relative w-full"
         style={{
           background: "linear-gradient(135deg, #f8ca32 30%, #5981f7 100%)",
           color: "#fff",
+          padding: "30px",
         }}
       >
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between py-20 px-6 lg:px-20">
