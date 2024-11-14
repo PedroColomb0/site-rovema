@@ -1,11 +1,33 @@
 "use client";
+
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules"; // Import correto para Swiper 8+
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 import banner1 from "./assets/banner1.png";
 import banner2 from "./assets/banner2.jpg";
 import banner3 from "./assets/banner2.jpg";
 import logo from "./assets/logo-grupo-rovema.png";
+
+// Logo empresas
+import rovemaEnergia from "./assets/rovema-energia.png";
+import autovemaFiat from "./assets/autovema-fiat.png";
+import rovemaLocadora from "./assets/autovema-fiat.png";
+import madeiraSeguros from "./assets/autovema-fiat.png";
+import RovemaVeiculoseMaquinas from "./assets/autovema-fiat.png";
+import uzziPay from "./assets/autovema-fiat.png";
+import sustenNutri from "./assets/autovema-fiat.png";
+import rovemaDistribuidora from "./assets/autovema-fiat.png";
+import uzziEnergy from "./assets/autovema-fiat.png";
+import rovemaAgoraNegocios from "./assets/autovema-fiat.png";
+import autovemaPegeout from "./assets/autovema-fiat.png";
+import autovemaCitroen from "./assets/autovema-fiat.png";
+import rovemaBank from "./assets/autovema-fiat.png";
 
 export default function HomePage() {
   const banners = [
@@ -28,6 +50,62 @@ export default function HomePage() {
       description: "Mais de 20 anos oferecendo as melhores soluções.",
       buttonText: "Explore",
       image: banner3,
+    },
+  ];
+
+  const empresas = [
+    {
+      image: rovemaEnergia,
+      link: "https://www.rovemaenergia.com.br",
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
+
+    },
+    {
+      image: autovemaFiat,
+      link: "https://www.rovemaenergia.com.br",
     },
   ];
 
@@ -108,17 +186,12 @@ export default function HomePage() {
               {banners[currentBanner].title}
             </h1>
             <p className="text-lg mb-6">{banners[currentBanner].description}</p>
-            <div className="mb-4">
-              <span className="text-sm font-semibold bg-white text-[#f8ca32] py-1 px-3 rounded-full inline-block">
-                Oferta Limitada
-              </span>
-            </div>
             <button className="bg-white text-[#5981f7] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#f8ca32] hover:text-white transition">
               {banners[currentBanner].buttonText}
             </button>
           </div>
 
-          {/* Imagem com Divisão Redonda */}
+          {/* Imagem */}
           <div
             style={{
               height: "400px",
@@ -139,58 +212,35 @@ export default function HomePage() {
         </div>
       </section>
 
-
-       {/* Seção de Notícias */}
-<section className="bg-gray-100 py-16">
-  <div className="container mx-auto px-6 lg:px-20">
-    <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
-      Últimas Notícias
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Card de Notícia */}
-      {banners.map((banner, index) => (
-        <div
-          key={index}
-          className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
-          style={{ height: "100%" }}
-        >
-          <div className="relative h-48">
-            <Image
-              src={banner.image}
-              alt={banner.title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
-          </div>
-          <div className="p-6 flex-grow">
-            <p className="text-gray-700">{banner.description}</p>
-          </div>
-          <div className="p-6 flex justify-between items-center">
-            <span className="text-sm text-gray-500">
-              {new Date().toLocaleDateString()}
-            </span>
-            <a
-              href="#"
-              className="text-[#5981f7] font-bold hover:underline"
-            >
-              Veja Mais →
-            </a>
+      {/* Seção de Notícias */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-6 lg:px-20">
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
+            Últimas Notícias
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {banners.map((banner, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={banner.image}
+                    alt={banner.title}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-700">{banner.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-    {/* Botão "Veja Todas as Notícias" */}
-    <div className="text-center mt-12">
-      <a
-        href="#"
-        className="bg-[#5981f7] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#f8ca32] hover:text-blue-900 transition"
-      >
-        Veja Todas as Notícias
-      </a>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Divisor Estilizado */}
       <div className="bg-blue-900 text-white py-8">
@@ -213,12 +263,52 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Secao de Nossas Empresas */}
-      <section>
+      {/* Seção de Nossas Empresas */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-6 lg:px-20">
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
+            Nossas Empresas
+          </h2>
 
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30} // Espaço entre os quadrados
+            slidesPerView={4} // Exibe 4 quadrados ao mesmo tempo
+            slidesPerGroup={1} // Avança 1 empresa por vez
+            navigation
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
+            breakpoints={{
+              320: { slidesPerView: 1 }, // 1 quadrado por vez em telas menores
+              640: { slidesPerView: 2 }, // 2 quadrados por vez em telas médias
+              1024: { slidesPerView: 4 }, // 4 quadrados por vez em telas grandes
+            }}
+          >
+            {empresas.map((empresa, index) => (
+              <SwiperSlide key={index}>
+                <a
+                  href={empresa.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div className="flex items-center justify-center h-40 bg-white">
+                      <Image
+                        src={empresa.image}
+                        alt={""}
+                        layout="intrinsic"
+                        width={200}
+                        height={120}
+                        objectFit="contain"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
-
-
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">

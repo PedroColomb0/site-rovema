@@ -22,3 +22,12 @@ body {
   padding: 0;
   line-height: 1.6;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #5981f7; /* Cor das setas */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #5981f7; /* Cor da bolinha ativa */
+}
