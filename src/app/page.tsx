@@ -139,6 +139,61 @@ export default function HomePage() {
         </div>
       </section>
 
+
+       {/* Seção de Notícias */}
+<section className="bg-gray-100 py-16">
+  <div className="container mx-auto px-6 lg:px-20">
+    <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
+      Últimas Notícias
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Card de Notícia */}
+      {banners.map((banner, index) => (
+        <div
+          key={index}
+          className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
+          style={{ height: "100%" }}
+        >
+          <div className="relative h-48">
+            <Image
+              src={banner.image}
+              alt={banner.title}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+          <div className="p-6 flex-grow">
+            <p className="text-gray-700">{banner.description}</p>
+          </div>
+          <div className="p-6 flex justify-between items-center">
+            <span className="text-sm text-gray-500">
+              {new Date().toLocaleDateString()}
+            </span>
+            <a
+              href="#"
+              className="text-[#5981f7] font-bold hover:underline"
+            >
+              Veja Mais →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    {/* Botão "Veja Todas as Notícias" */}
+    <div className="text-center mt-12">
+      <a
+        href="#"
+        className="bg-[#5981f7] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#f8ca32] hover:text-blue-900 transition"
+      >
+        Veja Todas as Notícias
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto text-center">
